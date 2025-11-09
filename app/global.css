@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* background theme */
+:root {
+  --bg: #070B12;
+  --border: rgba(255,255,255,0.08);
+}
+
+html, body { height: 100%; }
+
+body {
+  @apply bg-[var(--bg)] text-white antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 70% -10%, rgba(76,131,255,0.25), transparent 50%),
+    radial-gradient(900px 500px at -10% 60%, rgba(167,60,255,0.18), transparent 40%);
+}
+
+.container-prose { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card { @apply glass rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)]; }
+
+.btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium transition; }
+.btn-primary { @apply btn bg-[#1A73E8] hover:bg-[#4da8ff] text-white shadow-[0_0_40px_rgba(26,115,232,0.25)]; }
+.btn-ghost { @apply btn bg-white/5 hover:bg-white/10 text-white; }
+
+.badge { @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs border-white/15 bg-white/5; }
+hr.divider { @apply border-white/10 my-16; }
